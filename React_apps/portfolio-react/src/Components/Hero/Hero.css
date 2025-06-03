@@ -1,0 +1,160 @@
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 8%;
+  color: #d8d8d8;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.5s ease;
+  padding-top: 200px;
+  padding-bottom: 80px;
+}
+
+/* Animated gradient background */
+.animated-bg {
+  background: linear-gradient(-45deg, #0f0f0f, #1f1f1f, #101010, #2a2a2a);
+  background-size: 400% 400%;
+  animation: gradientAnimation 12s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Static background */
+.static-bg {
+  background: #1f1f1f;
+}
+
+/* Content box */
+.hero-content {
+  max-width: 800px;
+  z-index: 10;
+}
+
+/* Profile image */
+.hero-profile-img {
+  width: 180px;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 20px rgba(223, 137, 8, 0.4);
+  transition: transform 0.3s ease;
+}
+.hero-profile-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(223, 137, 8, 0.7);
+}
+
+/* Title */
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #df8908;
+  margin-bottom: 1rem;
+}
+.hero-title span {
+  color: #b415ff;
+}
+
+/* Tagline */
+.hero-tagline {
+  font-size: 1.8rem;
+  color: #ffcb47;
+  margin-bottom: 1rem;
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+/* Description */
+.hero-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #d8d8d8;
+  animation: fadeInUp 2s ease forwards;
+}
+
+/* Buttons */
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.btn {
+  padding: 0.75rem 2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+.btn-primary {
+  background-color: #df8908;
+  color: #1f1f1f;
+  border-color: #df8908;
+}
+.btn-primary:hover {
+  background-color: transparent;
+  color: #df8908;
+  border-color: #df8908;
+}
+.btn-secondary {
+  background-color: transparent;
+  color: #df8908;
+  border: 2px solid #df8908;
+}
+.btn-secondary:hover {
+  background-color: #df8908;
+  color: #1f1f1f;
+  border-color: #df8908;
+}
+
+/* Fade In Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.2rem;
+  }
+
+  .hero-description {
+    display: none;
+  }
+
+  .hero-profile-img {
+    width: 140px;
+  }
+}

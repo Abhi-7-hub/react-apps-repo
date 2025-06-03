@@ -1,0 +1,128 @@
+.projects-section {
+  padding: 60px 8%;
+  background: #1f1f1f; /* Footer-matching */
+  color: #D8D8D8;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.projects-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+  font-weight: 600;
+  background: linear-gradient(270deg, #DF8908 60%, #B415FF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background: #2a2a2a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.5);
+  border: 1px solid #DF8908;
+}
+
+.project-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.06);
+}
+
+.project-info {
+  padding: 1rem;
+}
+
+.project-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(270deg, #DF8908 60%, #B415FF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.project-card p {
+  font-size: 0.85rem;
+  color: #ccc;
+  margin-bottom: 0.8rem;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.project-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.project-links a {
+  background: #DF8908;
+  color: #1f1f1f;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.project-links a:hover {
+  background: #B415FF;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.project-card.active {
+  border: 2px solid #DF8908;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .projects-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .project-card img {
+    height: 140px;
+  }
+
+  .project-card h3 {
+    font-size: 1rem;
+  }
+
+  .project-card p {
+    font-size: 0.8rem;
+  }
+}
+
+section {
+  scroll-margin-top: 70px; /* Navbar height ke according adjust karo */
+}
+
+
+
