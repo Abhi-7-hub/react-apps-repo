@@ -173,7 +173,7 @@ Visit [http://localhost:3000](http://localhost:3000) in your browser.
 
 **Name:** Abhishek Pratap Singh
 **Role:** React Developer | MERN Stack Learner
-**Email:** [apsinghofficial@gmail.com](mailto:apsinghofficial@gmail.com)
+**Email:** [abhishek4srmu@gmail.com](mailto:abhishek4srmul@gmail.com)
 **GitHub:** [Abhi-7-hub](https://github.com/Abhi-7-hub)
 
 ---
