@@ -1,7 +1,7 @@
 import React from 'react';
 import './Skills.css';
 
-// React Icons से ज़रूरी आइकन इम्पोर्ट करें
+// React Icons 
 import {
   FaHtml5,
   FaCss3Alt,
@@ -42,16 +42,16 @@ const Skill = () => {
     { name: 'MySQL', icon: <SiMysql /> },
     { name: 'API Handling', icon: <AiOutlineApi /> },
     { name: 'Git & GitHub', icon: <FaGitAlt /> },
-    { name: 'VS Code', icon: <FaNodeJs /> },       // VS Code के पास कोई dedicated icon नहीं, Node.js या generic use किया
+    { name: 'VS Code', icon: <FaNodeJs /> },       //  icon  generic use 
     { name: 'Netlify', icon: <SiNetlify /> },
     { name: 'UI/UX', icon: <BsUiChecksGrid /> },
     { name: 'Tailwind CSS', icon: <SiTailwindcss /> },
     { name: 'Chakra UI', icon: <SiChakraui /> },
     { name: 'Canva', icon: <SiCanva /> },
-    { name: 'ChatGPT', icon: <FcGoogle /> },       // ChatGPT का कोई official icon नहीं, Google icon as placeholder
+    { name: 'ChatGPT', icon: <FcGoogle /> },       // ChatGPT have no offical ican so Google icon as placeholder
     { name: 'Zoom', icon: <SiZoom /> },
 
-    // ✅ Soft Skills (icon optional—optional है, यहाँ generic icon लगाया)
+    // ✅ Soft Skills (icon optional—optional -generic icon )
     { name: 'Teamwork', icon: <FaFigma /> },
     { name: 'Communication', icon: <FaFigma /> },
     { name: 'Problem-Solving', icon: <FaFigma /> },

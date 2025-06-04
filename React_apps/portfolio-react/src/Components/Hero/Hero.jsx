@@ -1,12 +1,13 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './Hero.css';
-import profile from '../../assets/profile.png';
+import profile from '../../assets/profile.png'; // Adjust path as per your folder structure
 import useFadeInOnScroll from '../../hooks/useFadeInOnScroll';
 
 const Hero = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const ref = useRef(null);
 
+  // Custom hook to trigger fade-in animation on scroll
   useFadeInOnScroll(ref);
 
   useEffect(() => {
@@ -18,6 +19,7 @@ const Hero = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Opens resume download link in new tab
   const downloadResume = () => {
     window.open(
       'https://drive.google.com/uc?export=download&id=1BIUE9ynVApmySc8xcc2qhtZO58c8F8PL',
@@ -25,6 +27,7 @@ const Hero = () => {
     );
   };
 
+  // Opens Gmail compose window with your email pre-filled
   const contactMe = () => {
     const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=abhishek4srmu@gmail.com`;
     window.open(gmailURL, '_blank');

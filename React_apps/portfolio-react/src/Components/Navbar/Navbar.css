@@ -1,17 +1,15 @@
-/* Reset */
+/* Reset default browser styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Navbar container */
+/* Main Navbar styles */
 .navbar {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  max-width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,13 +20,13 @@
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Scroll effect */
+/* Scroll effect (adds background and shadow) */
 .navbar-scrolled {
   background-color: #1f1f1f;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Logo */
+/* Logo with gradient text */
 .nav-logo-text {
   font-size: 1.5rem;
   font-weight: 700;
@@ -39,7 +37,7 @@
   cursor: pointer;
 }
 
-/* Nav menu */
+/* Navigation menu */
 .nav-menu {
   display: flex;
   gap: 2rem;
@@ -58,25 +56,7 @@
   color: #DF8908;
 }
 
-/* Connect button */
-.nav-connect-btn {
-  background: linear-gradient(270deg, #DF8908 0%, #B415FF 100%);
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 1rem;
-  color: #fff;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.nav-connect-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(223, 137, 8, 0.4);
-}
-
-/* Hamburger */
+/* Hamburger icon (hidden on desktop) */
 .nav-hamburger {
   display: none;
   flex-direction: column;
@@ -93,7 +73,7 @@
   transition: 0.3s ease;
 }
 
-/* Hamburger animation */
+/* Hamburger animation for open state */
 .nav-hamburger.open span:nth-child(1) {
   transform: rotate(45deg) translateY(8px);
 }
@@ -106,7 +86,7 @@
   transform: rotate(-45deg) translateY(-8px);
 }
 
-/* Responsive styles */
+/* Responsive Styles */
 @media (max-width: 868px) {
   .nav-menu {
     position: absolute;
@@ -123,10 +103,6 @@
 
   .nav-menu.active {
     display: flex;
-  }
-
-  .nav-connect-btn {
-    display: none;
   }
 
   .nav-hamburger {

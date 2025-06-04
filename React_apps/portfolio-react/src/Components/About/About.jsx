@@ -1,6 +1,6 @@
 import React from 'react';
 import './About.css';
-import profile from '../../assets/profile.png'; // Optional: use an illustration or delete if not using
+import profile from '../../assets/profile.png'; // Optional: use illustration or delete if not using
 
 const About = () => {
   return (
@@ -14,7 +14,12 @@ const About = () => {
       <div className="about-content fade-in">
         {/* Left: Photo or Illustration */}
         <div className="about-left">
-          <img src={profile} alt="Abhishek Pratap Singh" className="about-profile-img" />
+          <img
+            src={profile}
+            alt="Abhishek Pratap Singh"
+            className="about-profile-img"
+            loading="lazy"
+          />
         </div>
 
         {/* Right: Textual Bio */}
@@ -43,12 +48,46 @@ const About = () => {
       <div className="cert-section fade-in-bottom">
         <h2>🎓 Certifications</h2>
         <div className="cert-buttons">
-          <a className="cert-button" href="https://www.udemy.com/certificate/UC-5b7d4d15-0b4c-4f33-8634-a1d7b8e3364d/" target="_blank" rel="noreferrer">50 Days of DSA - JavaScript</a>
-          <a className="cert-button" href="https://www.udemy.com/certificate/UC-5b7d4d15-0b4c-4f33-8634-a1d7b8e3364d/" target="_blank" rel="noreferrer">React - The Complete Guide</a>
-          <a className="cert-button" href="https://www.udemy.com/course/html-css-javascript-certification-course-for-beginners/" target="_blank" rel="noreferrer">HTML, CSS & JS for Beginners</a>
-          <a className="cert-button" href="https://www.udemy.com/certificate/UC-34825e68-10b0-417a-86b9-7e3ed9195542/" target="_blank" rel="noreferrer">50 Projects in 50 Days</a>
-          <a className="cert-button" href="https://srmulearnkonnect.lntedutech.com/userProfile?tabtype=certificate
-" target="_blank" rel="noreferrer">Project Management Fundamentals and Agile Essentials: Tools, Techniques, and Shortcuts</a>
+          <a
+            className="cert-button"
+            href="https://www.udemy.com/certificate/UC-5b7d4d15-0b4c-4f33-8634-a1d7b8e3364d/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            50 Days of DSA - JavaScript
+          </a>
+          <a
+            className="cert-button"
+            href="https://www.udemy.com/certificate/UC-5b7d4d15-0b4c-4f33-8634-a1d7b8e3364d/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            React - The Complete Guide
+          </a>
+          <a
+            className="cert-button"
+            href="https://www.udemy.com/course/html-css-javascript-certification-course-for-beginners/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            HTML, CSS & JS for Beginners
+          </a>
+          <a
+            className="cert-button"
+            href="https://www.udemy.com/certificate/UC-34825e68-10b0-417a-86b9-7e3ed9195542/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            50 Projects in 50 Days
+          </a>
+          <a
+            className="cert-button"
+            href="https://srmulearnkonnect.lntedutech.com/userProfile?tabtype=certificate"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Project Management Fundamentals and Agile Essentials: Tools, Techniques, and Shortcuts
+          </a>
         </div>
       </div>
     </section>
