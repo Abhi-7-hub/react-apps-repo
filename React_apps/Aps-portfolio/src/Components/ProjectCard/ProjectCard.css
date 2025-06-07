@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
+
+.project-card {
+  background: #2a2a2a;
+  border-radius: 12px;
+  padding: 20px;
+  color: #ddd;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+  max-width: 400px;
+  margin: 1rem auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: max-width 0.3s ease;
+}
+
+.project-card.desktop-view {
+  max-width: 900px;
+}
+
+.project-thumbnail {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.mobile-thumbnail-wrapper {
+  position: relative;
+}
+
+.more-details-btn {
+  margin-top: -12px;
+  background: #DF8908;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #1f1f1f;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s ease;
+}
+
+.more-details-btn:hover {
+  background: #B415FF;
+  color: white;
+}
+
+.info-box {
+  border: 1px solid #555;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+  color: #DF8908;
+}
+
+.project-card p {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #ccc;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.project-links a,
+.project-links button {
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: #DF8908;
+  color: #1f1f1f;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.project-links a:hover,
+.project-links button:hover {
+  background: #B415FF;
+  color: white;
+}
+
+.skill-meter {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skill-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill-bar span {
+  flex: 1;
+  font-weight: 600;
+  color: #eee;
+}
+
+.skill-bar .bar {
+  flex: 3;
+  height: 12px;
+  background: #444;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.skill-bar .fill {
+  height: 100%;
+  background: linear-gradient(90deg, #DF8908 0%, #B415FF 100%);
+  border-radius: 8px 0 0 8px;
+}
+
+.likes-dislikes {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.likes-dislikes button {
+  background: #2a2a2a;
+  border: 1px solid #DF8908;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #DF8908;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.likes-dislikes button:hover {
+  background: #B415FF;
+  color: white;
+  border-color: #B415FF;
+}
+
+.material-symbols-outlined {
+  font-size: 20px;
+}
+
+.comments-section {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.comments-section input[type="text"] {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: #444;
+  color: #eee;
+}
+
+.comments-section input[type="text"]::placeholder {
+  color: #bbb;
+}
+
+.comments-section button {
+  background: #DF8908;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #1f1f1f;
+  transition: background-color 0.3s ease;
+  align-self: flex-end;
+}
+
+.comments-section button:hover {
+  background: #B415FF;
+  color: white;
+}
+
+.comments-section ul {
+  list-style: none;
+  padding-left: 0;
+  max-height: 150px;
+  overflow-y: auto;
+  margin-top: 0.5rem;
+  border-top: 1px solid #555;
+}
+
+.comments-section ul li {
+  padding: 6px 0;
+  border-bottom: 1px solid #444;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.comments-section ul::-webkit-scrollbar {
+  width: 6px;
+}
+.comments-section ul::-webkit-scrollbar-thumb {
+  background: #DF8908;
+  border-radius: 3px;
+}
+
+/* iframe */
+.project-iframe {
+  width: 100%;
+  height: 500px;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .project-card {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .likes-dislikes {
+    display: none;
+  }
+
+  .comments-section {
+    display: none;
+  }
+}
+
+

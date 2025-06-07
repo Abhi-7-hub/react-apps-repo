@@ -8,3 +8,160 @@
   opacity: 1;
   transform: translateY(0);
 }
+.projects-section {
+  padding: 60px 8%;
+  background: #1f1f1f;
+  color: #d8d8d8;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.projects-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+  font-weight: 600;
+  background: linear-gradient(270deg, #df8908 60%, #b415ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background: #2a2a2a;
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.project-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+  background: linear-gradient(270deg, #df8908 60%, #b415ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.project-links a {
+  background: #df8908;
+  color: #1f1f1f;
+  padding: 6px 12px;
+  margin-right: 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.project-links a:hover {
+  background: #b415ff;
+  color: white;
+}
+
+.skill-meter {
+  margin: 1rem 0;
+}
+
+.skill-bar {
+  margin-bottom: 0.5rem;
+}
+
+.skill-bar span {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.skill-bar .bar {
+  background: #444;
+  border-radius: 8px;
+  height: 12px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.skill-bar .fill {
+  background: #df8908;
+  height: 100%;
+  border-radius: 8px;
+  transition: width 0.4s ease;
+}
+
+.likes-dislikes {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.likes-dislikes button {
+  background: #df8908;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  color: #1f1f1f;
+}
+
+.likes-dislikes button:hover {
+  background: #b415ff;
+  color: white;
+}
+
+.comments-section input {
+  width: calc(100% - 80px);
+  padding: 8px 10px;
+  margin-right: 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+.comments-section button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  background: #df8908;
+  color: #1f1f1f;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.comments-section button:hover {
+  background: #b415ff;
+  color: white;
+}
+
+.comments-section ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+  max-height: 150px;
+  overflow-y: auto;
+  border-top: 1px solid #444;
+}
+
+.comments-section li {
+  padding: 6px 0;
+  border-bottom: 1px solid #333;
+}
+
+@media (max-width: 768px) {
+  .projects-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .project-card {
+    padding: 1rem;
+  }
+}
+
