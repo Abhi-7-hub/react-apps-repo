@@ -1,0 +1,160 @@
+.contact {
+  padding: 80px 10%;
+  background-color: #1f1f1f;   /* Dark background */
+  color: #D8D8D8;              /* Light text */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title-box {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.title-box h1 {
+  font-size: 36px;
+  background: linear-gradient(270deg, #DF8908 60%, #B415FF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  user-select: none;
+}
+
+.pattern-img {
+  margin-top: 10px;
+  width: 160px;
+  opacity: 0.15;
+}
+
+.contact-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.contact-left {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contact-left h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #fff;
+  user-select: none;
+}
+
+.contact-left p {
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 450px;
+  margin-bottom: 30px;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 16px;
+  color: #D8D8D8;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+  cursor: default;
+}
+
+.contact-detail:hover {
+  color: #DF8908;
+}
+
+.contact-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);  /* White icon for dark bg */
+  transition: transform 0.3s ease;
+}
+
+.contact-detail:hover .contact-icon {
+  transform: scale(1.25);
+}
+
+/* Right form side */
+.contact-right {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.contact-right label {
+  font-size: 14px;
+  color: #D8D8D8;
+  user-select: none;
+}
+
+.contact-right input,
+.contact-right textarea {
+  padding: 14px 18px;
+  border: 1.5px solid #444;
+  background-color: #2c2c2c;
+  color: #fff;
+  font-size: 15px;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  resize: vertical;
+}
+
+.contact-right input:focus,
+.contact-right textarea:focus {
+  border-color: #DF8908;
+  box-shadow: 0 0 8px #DF8908;
+}
+
+.contact-submit {
+  padding: 14px 28px;
+  border: none;
+  background: linear-gradient(270deg, #DF8908 60%, #B415FF 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  align-self: flex-start;
+  user-select: none;
+}
+
+.contact-submit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(223, 137, 8, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .title-box h1 {
+    font-size: 28px;
+  }
+
+  .contact-left h1 {
+    font-size: 24px;
+  }
+}
+
+section {
+  scroll-margin-top: 70px; /* Navbar height ke according adjust karo */
+}
+

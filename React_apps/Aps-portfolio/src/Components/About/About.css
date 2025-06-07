@@ -1,0 +1,185 @@
+/* Main About Section */
+.about-section {
+  padding: 60px 8%;
+  background: #1f1f1f; /* Dark background */
+  color: #D8D8D8; /* Light gray text */
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  opacity: 0;
+  animation: fadeInTop 1s ease-out both;
+}
+
+/* Section Title */
+.title-box {
+  margin-bottom: 2.5rem;
+}
+
+.title-box h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  background: linear-gradient(270deg, #DF8908 60%, #B415FF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* About Content Wrapper */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeIn 1s ease-out both;
+  animation-delay: 0.3s;
+}
+
+@media (min-width: 768px) {
+  .about-content {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+/* Left Side - Profile Image */
+.about-left {
+  flex: 1;
+  text-align: center;
+}
+
+.about-profile-img {
+  width: 250px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(223, 137, 8, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.about-profile-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(223, 137, 8, 0.6);
+}
+
+/* Right Side - Textual Bio */
+.about-right {
+  flex: 2;
+  font-size: 1rem;
+  line-height: 1.7;
+  padding: 0 1rem;
+  color: #D8D8D8;
+}
+
+/* Highlight strong text */
+.about-right strong {
+  color: #DF8908;
+}
+
+/* Philosophy italic text */
+.about-right em {
+  color: #B415FF;
+  font-style: italic;
+}
+
+/* Certifications Section */
+.cert-section {
+  margin-top: 3rem;
+  opacity: 0;
+  animation: fadeInBottom 1s ease-out both;
+  animation-delay: 0.6s;
+}
+
+.cert-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #DF8908;
+}
+
+/* Certification Buttons Container */
+.cert-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Individual Certification Button */
+.cert-button {
+  background: #2a2a2a;
+  color: #D8D8D8;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease, background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.cert-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(223, 137, 8, 0.6);
+  border: 1px solid #DF8908;
+  background-color: #353535;
+  cursor: pointer;
+}
+
+/* Fade Animations */
+@keyframes fadeInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .title-box h1 {
+    font-size: 1.8rem;
+  }
+
+  .about-content {
+    flex-direction: column;
+  }
+
+  .about-right {
+    font-size: 0.9rem;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .cert-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .cert-button {
+    font-size: 0.85rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
