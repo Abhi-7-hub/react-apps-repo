@@ -1,3 +1,4 @@
+/* Fade-in animation for smooth entrance */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -8,12 +9,15 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Projects Section */
 .projects-section {
   padding: 60px 8%;
   background: #1f1f1f;
   color: #d8d8d8;
   min-height: 100vh;
   text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .projects-section h2 {
@@ -23,16 +27,23 @@
   background: linear-gradient(270deg, #df8908 60%, #b415ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  user-select: none;
 }
 
+/* Grid layout for projects */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.5rem;
   max-width: 1100px;
   margin: 0 auto;
+
+  /* Important to fix overlapping: */
+  grid-auto-rows: auto; /* Rows adjust height automatically based on tallest content */
+  align-items: start;   /* Align items at the top of each grid cell */
 }
 
+/* Individual Project Card */
 .project-card {
   background: #2a2a2a;
   border-radius: 12px;
@@ -40,6 +51,14 @@
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
   transition: box-shadow 0.3s ease;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  cursor: default;
+}
+
+.project-card:hover {
+  box-shadow: 0 10px 25px rgba(223, 137, 8, 0.7);
 }
 
 .project-card h3 {
@@ -48,6 +67,12 @@
   background: linear-gradient(270deg, #df8908 60%, #b415ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  user-select: none;
+}
+
+/* Project links (Demo, GitHub, etc) */
+.project-links {
+  margin-top: auto; /* push links to bottom */
 }
 
 .project-links a {
@@ -60,6 +85,7 @@
   font-size: 0.9rem;
   text-decoration: none;
   transition: background 0.3s ease;
+  display: inline-block;
 }
 
 .project-links a:hover {
@@ -67,6 +93,7 @@
   color: white;
 }
 
+/* Skill meter */
 .skill-meter {
   margin: 1rem 0;
 }
@@ -79,6 +106,7 @@
   display: block;
   font-weight: 600;
   margin-bottom: 4px;
+  color: #ddd;
 }
 
 .skill-bar .bar {
@@ -96,6 +124,7 @@
   transition: width 0.4s ease;
 }
 
+/* Likes & Dislikes Buttons */
 .likes-dislikes {
   display: flex;
   gap: 10px;
@@ -118,12 +147,24 @@
   color: white;
 }
 
+/* Comments Section */
+.comments-section {
+  margin-top: 1rem;
+}
+
 .comments-section input {
   width: calc(100% - 80px);
   padding: 8px 10px;
   margin-right: 10px;
   border-radius: 6px;
   border: none;
+  background: #333;
+  color: #ddd;
+  font-size: 1rem;
+}
+
+.comments-section input::placeholder {
+  color: #aaa;
 }
 
 .comments-section button {
@@ -134,6 +175,7 @@
   color: #1f1f1f;
   font-weight: 600;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 .comments-section button:hover {
@@ -153,8 +195,21 @@
 .comments-section li {
   padding: 6px 0;
   border-bottom: 1px solid #333;
+  color: #ccc;
+  font-size: 0.95rem;
 }
 
+/* Scrollbar styling for comments */
+.comments-section ul::-webkit-scrollbar {
+  width: 6px;
+}
+
+.comments-section ul::-webkit-scrollbar-thumb {
+  background: #df8908;
+  border-radius: 3px;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .projects-section h2 {
     font-size: 1.8rem;
@@ -163,5 +218,10 @@
   .project-card {
     padding: 1rem;
   }
-}
 
+  .project-links a {
+    margin-bottom: 8px;
+    padding: 8px 14px;
+    font-size: 1rem;
+  }
+}

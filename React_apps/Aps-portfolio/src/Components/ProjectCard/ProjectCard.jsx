@@ -3,14 +3,13 @@ import { ref, onValue, push, runTransaction } from "firebase/database";
 import { database } from "../../firebase/config";
 import "./ProjectCard.css";
 
-const ProjectCard = ({ project }) => {
-  const { id, title, description, github, demo, skills = [], thumbnail } = project;
+const ProjectCard = ({ project, isExpanded, onExpand, showAll }) => {
+  const { id, title, description, github, demo, skills = [], image } = project;
 
   const [likes, setLikes] = useState(0);
   const [dislikes, setDislikes] = useState(0);
   const [comments, setComments] = useState([]);
   const [commentInput, setCommentInput] = useState("");
-  const [isDesktopView, setIsDesktopView] = useState(false);
 
   useEffect(() => {
     const likesRef = ref(database, `projects/${id}/likes`);
@@ -50,22 +49,25 @@ const ProjectCard = ({ project }) => {
   };
 
   const handleShare = () => {
-    if (navigator.share) navigator.share({ title, url: demo });
-    else alert("Share not supported in this browser.");
+    if (navigator.share) {
+      navigator.share({ title, url: demo });
+    } else {
+      alert("Share not supported in this browser.");
+    }
   };
 
-  const toggleView = () => setIsDesktopView((prev) => !prev);
+  if (!showAll && !isExpanded) {
+    return null;
+  }
 
   return (
-    <div className={`project-card ${isDesktopView ? "desktop-view" : ""}`}>
-      {/* Thumbnail or Button for Mobile */}
-      {!isDesktopView ? (
-        <div className="mobile-thumbnail-wrapper">
-          {thumbnail && (
-            <img src={thumbnail} alt={`${title} thumbnail`} className="project-thumbnail" />
-          )}
-
-        </div>
+    <div className={`project-card ${isExpanded ? "desktop-view" : ""}`}>
+      {!isExpanded ? (
+        image && (
+          <div className="mobile-thumbnail-wrapper">
+            <img src={image} alt={`${title} thumbnail`} className="project-thumbnail" />
+          </div>
+        )
       ) : (
         <iframe
           title="project-demo-iframe"
@@ -76,37 +78,37 @@ const ProjectCard = ({ project }) => {
         />
       )}
 
-      {/* Info Box */}
       <div className="info-box">
         <h3>{title}</h3>
         <p>{description}</p>
-      </div>
 
-      {/* GitHub, Demo, Toggle */}
-      <div className="project-links">
-        <a href={github} target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href={demo} target="_blank" rel="noopener noreferrer">Live Demo</a>
-        <button onClick={toggleView}>
-          {isDesktopView ? "Switch to Mobile View" : "More Details"}
-        </button>
-      </div>
-
-      {/* Skill Meter */}
-      <div className="skill-meter">
-        {skills.map((skill) => (
-          <div key={skill.name} className="skill-bar">
-            <span>{skill.name}</span>
-            <div className="bar">
-              <div className="fill" style={{ width: `${skill.level}%` }}></div>
+        <div className="skill-meter">
+          {skills.map((skill) => (
+            <div key={skill.name} className="skill-bar">
+              <span>{skill.name}</span>
+              <div className="bar">
+                <div
+                  className="fill"
+                  style={{ "--fill-width": skill.level + "%" }}
+                ></div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
-      {/* Show like/dislike/comment only in desktop view */}
-      {isDesktopView && (
-        <>
-          <div className="likes-dislikes">
+      {isExpanded && (
+        <div className="project-controls-desktop">
+          <div className="left-buttons">
+            <a href={github} target="_blank" rel="noopener noreferrer">
+              <span className="material-symbols-outlined">code</span> GitHub
+            </a>
+            <a href={demo} target="_blank" rel="noopener noreferrer">
+              <span className="material-symbols-outlined">open_in_new</span> Live Demo
+            </a>
+          </div>
+
+          <div className="right-buttons">
             <button onClick={handleLike}>
               <span className="material-symbols-outlined">thumb_up</span> {likes}
             </button>
@@ -117,23 +119,51 @@ const ProjectCard = ({ project }) => {
               <span className="material-symbols-outlined">share</span>
             </button>
           </div>
+        </div>
+      )}
 
+      {!isExpanded && (
+        <div className="project-links">
+          <a href={github} target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href={demo} target="_blank" rel="noopener noreferrer">Live Demo</a>
+          <button
+            className="more-details-btn"
+            onClick={() => onExpand(id)}
+          >
+            More Details
+          </button>
+        </div>
+      )}
+
+      {isExpanded && (
+        <>
           <div className="comments-section">
-            <input
-              type="text"
-              value={commentInput}
-              placeholder="Add a comment"
-              onChange={(e) => setCommentInput(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && handleCommentSubmit()}
-            />
-            <button onClick={handleCommentSubmit}>Post</button>
+            <div className="comment-input-row">
+              <input
+                type="text"
+                value={commentInput}
+                placeholder="Add a comment"
+                onChange={(e) => setCommentInput(e.target.value)}
+                onKeyDown={(e) => e.key === "Enter" && handleCommentSubmit()}
+              />
+              <button onClick={handleCommentSubmit}>Post</button>
+            </div>
             <ul>
-              {comments.slice(0, 2).map((c, i) => <li key={i}>{c.text}</li>)}
+              {comments.slice(0, 2).map((c, i) => (
+                <li key={i}>{c.text}</li>
+              ))}
               {comments.length > 2 && (
                 <li style={{ opacity: 0.6 }}>...and {comments.length - 2} more</li>
               )}
             </ul>
           </div>
+          
+          <button 
+            className="back-button"
+            onClick={() => onExpand(null)}
+          >
+            <span className="material-symbols-outlined">arrow_back</span> Back to Projects
+          </button>
         </>
       )}
     </div>
